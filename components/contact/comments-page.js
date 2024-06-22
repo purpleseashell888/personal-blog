@@ -19,7 +19,6 @@ export default function CommentsPage() {
   function showCommentsHandler() {
     setShowComments((prev) => !prev);
   }
-  // console.log(comments);
 
   return (
     <section className={classes.comments}>

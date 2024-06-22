@@ -1,11 +1,12 @@
-import classes from "./comment-list.module.css";
-import { ObjectId } from "mongodb";
+import { useState, useEffect } from "react";
+import { useSession } from "next-auth/react";
 
-async function deleteHandler(itemId) {
-  const objectId = new mongoose.Types.ObjectId(itemId);
+import classes from "./comment-list.module.css";
+
+async function deleteHandler(itemEmail) {
   const response = await fetch("api/contact", {
     method: "DELETE",
-    body: JSON.stringify({ id: objectId }),
+    body: JSON.stringify({ email: itemEmail }),
     headers: { "Content-Type": "application/json" },
   });
 
@@ -18,6 +19,16 @@ async function deleteHandler(itemId) {
 
 export default function CommentsList(props) {
   const { items } = props;
+  const { status } = useSession();
+  const [isLogin, setLogin] = useState(false);
+
+  useEffect(() => {
+    if (status === "authenticated") {
+      setLogin(true);
+    } else {
+      setLogin(false);
+    }
+  }, [status, setLogin]);
 
   return (
     <ul className={classes.comments}>
@@ -26,7 +37,9 @@ export default function CommentsList(props) {
           <p>{item.message}</p>
           <div>
             By <address>{item.name}</address>
-            <button onClick={() => deleteHandler(item._id)}>Delete</button>
+            {isLogin && (
+              <button onClick={() => deleteHandler(item.email)}>Delete</button>
+            )}
           </div>
         </li>
       ))}

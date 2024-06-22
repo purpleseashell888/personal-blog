@@ -47,7 +47,11 @@ body {
   color: #252525;
   font-family: "Roboto", sans-serif;
 }
-
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
 h1,
 h2,
 h3 {
@@ -61,4 +65,12 @@ a {
 button {
   font: inherit;
   cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
 }

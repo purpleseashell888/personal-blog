@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  margin: 5rem 10rem;
+}
+
+.content {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  margin: 0rem 5rem;
+}
+.content h2 {
+  font-size: 40px;
+}
+
+.content p {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.tab {
+  display: flex;
+  margin-top: 2rem;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.data {
+  font-size: 20px;
+}

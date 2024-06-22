@@ -1,12 +1,13 @@
-import FeaturedPosts from "@/components/home-page/featured-posts";
+import AboutSection from "@/components/home/about-section";
+import HeroSection from "@/components/home/hero-section";
 import { getFeaturedPosts } from "@/lib/post-utils";
 import { Fragment } from "react";
 
 export default function Home(props) {
   return (
     <Fragment>
-      This is home page.
-      <FeaturedPosts posts={props.posts} />
+      <HeroSection />
+      <AboutSection />
     </Fragment>
   );
 }

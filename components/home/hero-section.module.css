@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 5rem;
+}
+
+.container h1 {
+  font-size: 6rem;
+}
+
+.text {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  color: #4e4f4f;
+}
+
+.resume {
+  display: flex;
+  justify-content: center;
+  width: 8em;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  border: 2px solid;
+  border-radius: 8px;
+  padding: var(--size-2) var(--size-4);
+}
+
+.hero {
+  padding-top: 5rem;
+}

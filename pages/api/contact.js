@@ -90,7 +90,7 @@ export default async function handler(req, res) {
   if (req.method === "DELETE") {
     let client;
 
-    const { id } = req.body;
+    const { email } = req.body;
 
     try {
       client = await MongoClient.connect(
@@ -103,7 +103,7 @@ export default async function handler(req, res) {
     const db = client.db();
 
     try {
-      result = await db.collection("message").deleteOne({ _id: id });
+      await db.collection("message").deleteOne({ email: email });
       res.status(201).json({ message: "Message deleted successfully!" });
     } catch (error) {
       client.close();

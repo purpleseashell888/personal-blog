@@ -28,6 +28,10 @@ export default function MainNavigation() {
             <Link href="/blogs">Blogs</Link>
           </li>
           <li>
+            <Link href="/projects">Projects</Link>
+          </li>
+
+          <li>
             <Link href="/comments">Comments</Link>
           </li>
           {session && (

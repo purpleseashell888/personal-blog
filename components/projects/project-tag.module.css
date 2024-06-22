@@ -1,0 +1,25 @@
+.button {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border-radius: 9999px;
+  border-width: 2px;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  cursor: pointer;
+}
+
+.buttonSelected {
+  color: #000000;
+  border-color: #8b5cf6;
+}
+
+.notSelected {
+  color: #717171;
+  border-color: rgb(71 85 105);
+}
+
+.notSelected:hover {
+  border-color: #adb7be;
+}
